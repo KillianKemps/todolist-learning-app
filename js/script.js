@@ -51,3 +51,5 @@ class TodoListApp {
 
 // Run Todo list App
 let app = new TodoListApp();
+
+module.exports = TodoListApp;

@@ -1,0 +1,15 @@
+{
+  "name": "learning-todolist",
+  "version": "0.1.0",
+  "description": "Todolist learning app",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Killian Kemps",
+  "license": "MIT"
+}
