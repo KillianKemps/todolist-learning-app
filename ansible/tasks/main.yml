@@ -1,0 +1,11 @@
+---
+- include_tasks: docker.yml
+
+- name: Pull default Docker image
+  docker_image:
+    name: "{{ app_container_image }}"
+    source: pull
+
+- name: Run docker image
+  command:
+    cmd: "docker run --name myapp --restart always -p 80:80 -d {{ app_container_image }}"
