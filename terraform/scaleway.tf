@@ -1,13 +1,3 @@
-resource "scaleway_account_ssh_key" "me" {
-    name       = "me"
-    public_key = "PUT-YOUR-PUBLIC-KEY"
-}
-
-resource "scaleway_account_ssh_key" "admin" {
-    name       = "admin"
-    public_key = "PUT-ADMIN-PUBLIC-KEY"
-}
-
 resource "scaleway_instance_ip" "public_ip" {}
 
 resource "scaleway_instance_security_group" "default-security-group" {
@@ -39,4 +29,6 @@ resource "scaleway_instance_server" "teaching-instance" {
   ip_id = scaleway_instance_ip.public_ip.id
 
   security_group_id = scaleway_instance_security_group.default-security-group.id
+
+  cloud_init = file("${path.module}/cloud-init.yml")
 }
